@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/userRoute.js";
@@ -18,6 +19,7 @@ const connect = async () => {
 };
 
 const app = express();
+app.use(cors({ origin: "http://localhost:5173", credential: true }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -30,7 +32,7 @@ app.use((err, req, res, next) => {
   return res.status(errorStatus).send(errorMessage);
 });
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   connect();
-  console.log("Server is running on port 5000");
+  console.log(`Server is running on port ${process.env.PORT}`);
 });
