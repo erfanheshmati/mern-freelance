@@ -14,7 +14,7 @@ import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
 
-function App() {
+export default function App() {
   const Layout = () => {
     return (
       <div className="app">
@@ -76,5 +76,3 @@ function App() {
 
   return <RouterProvider router={router} />;
 }
-
-export default App;
