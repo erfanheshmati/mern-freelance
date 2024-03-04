@@ -6,6 +6,7 @@ import cors from "cors";
 
 import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/userRoute.js";
+import gigRoute from "./routes/gigRoute.js";
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.use("/api/gigs", gigRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
