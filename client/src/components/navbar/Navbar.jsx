@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
 import newRequest from "../../utils/newRequest";
 
-function Navbar() {
+export default function Navbar() {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -125,5 +125,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;

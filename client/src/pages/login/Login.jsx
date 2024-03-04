@@ -30,7 +30,6 @@ export default function Login() {
           name="username"
           type="text"
           placeholder="johndoe"
-          value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <label htmlFor="">Password</label>
@@ -38,7 +37,6 @@ export default function Login() {
           name="password"
           type="password"
           placeholder="********"
-          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
